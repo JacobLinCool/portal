@@ -1,0 +1,7 @@
+{
+	"chat": {
+		"placeholder": "如何聯絡你呢？"
+	},
+	"welcome": "歡迎使用 SvelteKit+",
+	"with-tech": "SvelteKit 加上 TailwindCSS、DaisyUI 以及 I18n！"
+}

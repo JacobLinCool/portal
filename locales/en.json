@@ -1,0 +1,7 @@
+{
+	"chat": {
+		"placeholder": "How to contact you?"
+	},
+	"welcome": "Welcome to SvelteKit+",
+	"with-tech": "SvelteKit with TailwindCSS, DaisyUI, and I18n!"
+}
