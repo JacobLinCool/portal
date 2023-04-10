@@ -15,6 +15,7 @@ declare global {
 
 	export interface Profile {
 		blocks: Block[];
+		background?: string;
 	}
 
 	export interface BaseBlock {

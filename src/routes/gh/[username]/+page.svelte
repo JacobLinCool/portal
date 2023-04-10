@@ -12,10 +12,20 @@
 	$: if (done === profile?.blocks.length) {
 		console.timeEnd("load blocks");
 	}
+
+	let style = "";
+	if (profile.background) {
+		try {
+			const url = new URL(profile.background);
+			style = `background: url(${url}) center center / cover no-repeat;`;
+		} catch {
+			style = `background: ${profile.background};`;
+		}
+	}
 </script>
 
 {#if data.ok}
-	<div class="h-full w-full bg-base-100 flex flex-col items-center px-2">
+	<div class="h-full w-full bg-base-100 flex flex-col items-center px-2" {style}>
 		<div class="w-full h-full max-w-lg overflow-auto">
 			<div class="w-full pt-12" />
 			{#each profile.blocks as block}

@@ -13,7 +13,7 @@
 				block: "chat",
 				permission: 0,
 				greeting:
-					"👋 嗨！我是林振可（Jacob Lin），目前就讀於師大資工\n我喜歡寫些有趣的東西",
+					"👋 嗨！我是林振可（Jacob Lin），目前就讀於師大資工\n我喜歡設計些有趣的程式 🎨",
 			},
 			{
 				block: "action",
@@ -56,6 +56,7 @@
 				],
 			},
 		],
+		background: "https://storage.jacoblin.cool/unicourse-bg.png",
 	};
 
 	let done = 0;
@@ -63,13 +64,23 @@
 	$: if (done === profile.blocks.length) {
 		console.timeEnd("load blocks");
 	}
+
+	let style = "";
+	if (profile.background) {
+		try {
+			const url = new URL(profile.background);
+			style = `background: url(${url}) center center / cover no-repeat;`;
+		} catch {
+			style = `background: ${profile.background};`;
+		}
+	}
 </script>
 
-<div class="h-full w-full bg-base-100 flex flex-col items-center px-2">
+<div class="h-full w-full bg-base-100 flex flex-col items-center px-2" {style}>
 	<div class="w-full h-full max-w-lg overflow-auto">
 		<div class="w-full pt-12" />
 		{#each profile.blocks as block}
-			<Block {block} on:done={() => done++} />
+			<Block {block} blocks={profile.blocks} on:done={() => done++} />
 
 			{#if done === profile.blocks.length}
 				<div class="divider" />

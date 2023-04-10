@@ -2,10 +2,11 @@
 	import { createEventDispatcher } from "svelte";
 
 	export let block: Block;
+	export let blocks: Block[] = [];
 
 	const dispatch = createEventDispatcher();
 
-	const blocks = {
+	const components = {
 		["head"]: () => import("./Head/Head.svelte"),
 		["chat"]: () => import("./Chat/Chat.svelte"),
 		["action"]: () => import("./Action/Action.svelte"),
@@ -15,13 +16,13 @@
 	let selected = block.block;
 	let BlockComponent: ConstructorOfATypedSvelteComponent | undefined;
 	$: {
-		if (selected in blocks) {
-			blocks[selected as keyof typeof blocks]().then((m) => {
+		if (selected in components) {
+			components[selected as keyof typeof components]().then((m) => {
 				BlockComponent = m.default;
 				dispatch("done");
 			});
 		} else {
-			blocks.unknown().then((m) => {
+			components.unknown().then((m) => {
 				BlockComponent = m.default;
 				dispatch("done");
 			});
@@ -30,5 +31,5 @@
 </script>
 
 {#if BlockComponent}
-	<svelte:component this={BlockComponent} {block} />
+	<svelte:component this={BlockComponent} {block} {blocks} />
 {/if}
