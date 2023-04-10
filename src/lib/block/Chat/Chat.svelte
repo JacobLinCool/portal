@@ -100,7 +100,7 @@
 	{#if no_key}
 		<ErrorBlock error="No OpenAI API Key" {block} />
 	{:else}
-		<div class="w-full max-h-64 overflow-y-auto" id="chats">
+		<div class="max-h-64 w-full overflow-y-auto" id="chats">
 			{#each messages as msg, i}
 				<div class="chat" class:chat-start={!(i % 2)} class:chat-end={i % 2}>
 					<div
@@ -120,7 +120,7 @@
 		<div class="form-control w-full p-2">
 			<div class="input-group">
 				<input
-					class="input input-bordered w-full"
+					class="input-bordered input w-full"
 					type="text"
 					bind:value={question}
 					{placeholder}
@@ -136,7 +136,7 @@
 					on:compositionstart={() => (composing = true)}
 					on:compositionend={() => setTimeout(() => (composing = false), 10)}
 				/>
-				<button class="btn btn-square text-xl" on:click={ask} disabled={asking}>
+				<button class="btn-square btn text-xl" on:click={ask} disabled={asking}>
 					<Icon icon="carbon:send-alt-filled" />
 				</button>
 			</div>

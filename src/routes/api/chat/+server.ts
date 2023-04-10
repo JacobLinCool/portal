@@ -70,7 +70,7 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
 		const data = await chat({
 			model: "gpt-3.5-turbo",
 			temperature: 0.5,
-			max_tokens: 128,
+			max_tokens: 200,
 			messages,
 		});
 		console.log(data.usage);

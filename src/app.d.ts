@@ -42,7 +42,27 @@ declare global {
 		placeholder?: string;
 	}
 
-	export type Block = HeadBlock | ActionBlock | ChatBlock | BaseBlock;
+	export interface CarouselBlock extends BaseBlock {
+		block: "carousel";
+		title: string;
+		items: CarouselItem[];
+		autoplay?: number;
+	}
+
+	export interface IframeBlock extends BaseBlock {
+		block: "iframe";
+		src: string;
+		height?: number;
+		width?: number;
+	}
+
+	export type Block =
+		| HeadBlock
+		| ActionBlock
+		| ChatBlock
+		| CarouselBlock
+		| IframeBlock
+		| BaseBlock;
 
 	export interface Action {
 		display: ActionDisplay;
@@ -60,6 +80,11 @@ declare global {
 		text: string;
 		color: string;
 		css?: string;
+	}
+
+	export interface CarouselItem {
+		image: string;
+		link?: string;
 	}
 }
 

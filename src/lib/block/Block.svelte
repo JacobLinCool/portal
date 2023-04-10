@@ -10,6 +10,10 @@
 		["head"]: () => import("./Head/Head.svelte"),
 		["chat"]: () => import("./Chat/Chat.svelte"),
 		["action"]: () => import("./Action/Action.svelte"),
+		["carousel"]: () => import("./Carousel/Carousel.svelte"),
+		["iframe"]: () => import("./Iframe/Iframe.svelte"),
+		// ["code"]: () => import("./Code/Code.svelte"),
+		["error"]: () => import("./Error/Error.svelte"),
 		["unknown"]: () => import("./Unknown/Unknown.svelte"),
 	};
 

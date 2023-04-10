@@ -33,8 +33,8 @@
 </svelte:head>
 
 {#if data.ok}
-	<div class="h-full w-full bg-base-100 flex flex-col items-center px-2" {style}>
-		<div class="w-full h-full max-w-lg overflow-auto">
+	<div class="flex h-full w-full flex-col items-center bg-base-100 px-2" {style}>
+		<div class="h-full w-full max-w-lg overflow-auto">
 			<div class="w-full pt-12" />
 			{#each profile.blocks as block}
 				<Block {block} on:done={() => done++} />
@@ -43,22 +43,23 @@
 					<div class="divider" />
 				{/if}
 			{/each}
-			<div class="w-full flex justify-center items-center">
+			<div class="flex w-full items-center justify-center">
 				<a
-					class="btn btn-sm btn-ghost italic normal-case"
+					class="btn-ghost btn-sm btn normal-case italic"
 					href="https://github.com/JacobLinCool/portal"
 					target="_blank"
 				>
 					{done === profile.blocks.length ? "Portal" : "Loading"}
 				</a>
 			</div>
+			<div class="w-full pb-12" />
 		</div>
 	</div>
 {:else}
-	<div class="h-full w-full bg-base-100 flex flex-col items-center justify-center">
-		<div class="p-4 bg-error rounded-lg text-error-content w-full max-w-lg">
+	<div class="flex h-full w-full flex-col items-center justify-center bg-base-100">
+		<div class="w-full max-w-lg rounded-lg bg-error p-4 text-error-content">
 			<p class="text-lg">Error loading profile from GitHub</p>
-			<p class="text-base my-4">
+			<p class="my-4 text-base">
 				Cannot load profile for <a
 					class="link"
 					href="https://github.com/{$page.params.username}/{$page.params
@@ -69,7 +70,7 @@
 				</a>
 			</p>
 			<a
-				class="btn btn-outline"
+				class="btn-outline btn"
 				href="https://github.com/JacobLinCool/portal"
 				target="_blank"
 			>

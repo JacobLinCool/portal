@@ -2,7 +2,7 @@
 	export let block: HeadBlock;
 </script>
 
-<div class="w-full flex flex-col justify-center items-center gap-2">
+<div class="flex w-full flex-col items-center justify-center gap-2">
 	<div class="avatar">
 		<div class="w-20 rounded-full">
 			<img src={block.avatar} alt="{block.display}'s Avatar" />
