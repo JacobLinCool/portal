@@ -1,8 +1,8 @@
-# portal
+# Portal
 
 Create simple landing / profile page.
 
-## How to use
+## How to Use
 
 ### GitHub
 
@@ -72,3 +72,13 @@ The content of `portal.json` should be like this:
 > You can see [my `portal.json`](https://github.com/JacobLinCool/JacobLinCool/blob/main/portal.json) for more details.
 
 Then, visit <https://ptl.pages.dev/gh/username>. (Or <https://portal.csie.cool/gh/username>)
+
+## Supported Blocks
+
+- [x] `head` - Display user's avatar and name.
+- [x] `chat` - PortalGPT chatroom.
+- [x] `action` - Display links.
+- [x] `carousel` - Display auto-sliding images (with links).
+- [x] `iframe` - Display iframe.
+- [ ] `code` - Display a code block.
+- [ ] [Waiting for your suggestion!](https://github.com/JacobLinCool/portal/issues/new?title=%5BFeature%20Request%5D%20%22Cool%22%20Block)
