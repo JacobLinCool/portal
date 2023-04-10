@@ -14,7 +14,7 @@
 	}
 
 	let style = "";
-	if (profile.background) {
+	if (profile?.background) {
 		try {
 			const url = new URL(profile.background);
 			style = `background: url(${url}) center center / cover no-repeat;`;
