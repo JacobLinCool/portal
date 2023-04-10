@@ -15,8 +15,8 @@
 		"lint": "prettier --ignore-path .gitignore --check **/*.{ts,js,json,yaml,yml,svelte,html,css} && eslint .",
 		"format": "prettier --ignore-path .gitignore --write **/*.{ts,js,json,yaml,yml,svelte,html,css}",
 		"changeset": "changeset",
-		"upload": "pnpm build && wrangler pages publish --project-name portal .svelte-kit/cloudflare",
-		"tail": "wrangler pages deployment tail --project-name portal"
+		"upload": "pnpm build && wrangler pages publish --project-name ptl .svelte-kit/cloudflare",
+		"tail": "wrangler pages deployment tail --project-name ptl"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.8",

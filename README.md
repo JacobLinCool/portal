@@ -71,4 +71,4 @@ The content of `portal.json` should be like this:
 
 > You can see [my `portal.json`](https://github.com/JacobLinCool/JacobLinCool/blob/main/portal.json) for more details.
 
-Then, visit <https://門.pages.dev/gh/username>. (Or <https://portal.csie.cool/gh/username>)
+Then, visit <https://ptl.pages.dev/gh/username>. (Or <https://portal.csie.cool/gh/username>)
