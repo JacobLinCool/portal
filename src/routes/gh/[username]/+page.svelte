@@ -24,6 +24,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{$page.params.username} @GitHub | Portal</title>
+	<meta
+		name="description"
+		content="Check out the GitHub user {$page.params.username}'s profile on Portal"
+	/>
+</svelte:head>
+
 {#if data.ok}
 	<div class="h-full w-full bg-base-100 flex flex-col items-center px-2" {style}>
 		<div class="w-full h-full max-w-lg overflow-auto">
