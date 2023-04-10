@@ -4,6 +4,7 @@
 	import SvelteMarkdown from "svelte-markdown";
 	import Icon from "@iconify/svelte";
 	import ErrorBlock from "../Error/Error.svelte";
+	import Code from "./Code.svelte";
 	import Link from "./Link.svelte";
 
 	export let block: ChatBlock;
@@ -107,7 +108,10 @@
 						style="word-break: break-word;"
 						class:animate-pulse={i === messages.length - 1 && asking}
 					>
-						<SvelteMarkdown source={inject(msg)} renderers={{ link: Link }} />
+						<SvelteMarkdown
+							source={inject(msg)}
+							renderers={{ link: Link, code: Code }}
+						/>
 					</div>
 				</div>
 			{/each}
@@ -130,7 +134,7 @@
 						}
 					}}
 					on:compositionstart={() => (composing = true)}
-					on:compositionend={() => setTimeout(() => (composing = false))}
+					on:compositionend={() => setTimeout(() => (composing = false), 10)}
 				/>
 				<button class="btn btn-square text-xl" on:click={ask} disabled={asking}>
 					<Icon icon="carbon:send-alt-filled" />
