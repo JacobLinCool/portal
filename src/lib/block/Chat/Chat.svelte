@@ -91,7 +91,7 @@
 	function scroll(): void {
 		setTimeout(() => {
 			const chats = [...document.querySelectorAll("#chats > div")];
-			chats[chats.length - 1 - (chats.length % 2)].scrollIntoView({
+			chats[chats.length - 1].scrollIntoView({
 				behavior: "smooth",
 				block: "nearest",
 			});
