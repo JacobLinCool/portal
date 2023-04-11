@@ -1,20 +1,11 @@
 <script lang="ts">
 	import ActionDisplay from "./ActionDisplay.svelte";
+	import { hook1 } from "$lib/webhook";
 
 	export let action: Action;
 
 	async function click(h: ActionHandle): Promise<void> {
 		switch (h.type) {
-			case "link": {
-				const w = window.open("", "_blank");
-				if (w) {
-					setTimeout(() => {
-						w.location.href = h.value;
-					}, 10);
-				}
-
-				break;
-			}
 			default: {
 				console.error("Unknown handle type", h);
 				break;
@@ -30,6 +21,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		title={action.description}
+		on:click={() => hook1("click", { type: "link", value: action.handle.value })}
 	>
 		<ActionDisplay display={action.display} />
 	</a>

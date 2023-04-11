@@ -1,6 +1,10 @@
 <script lang="ts">
+	import { hook } from "$lib/webhook";
+
 	export let error: string;
 	export let block: Block;
+
+	hook("error", { error, block });
 </script>
 
 <div class="rounded-lg bg-error p-4 text-error-content">

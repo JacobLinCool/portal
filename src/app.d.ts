@@ -16,6 +16,7 @@ declare global {
 	export interface Profile {
 		blocks: Block[];
 		background?: string;
+		webhooks?: string[];
 	}
 
 	export interface BaseBlock {

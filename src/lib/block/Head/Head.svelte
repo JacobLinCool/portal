@@ -3,6 +3,7 @@
 	import Popup from "$lib/Popup.svelte";
 	import { page } from "$app/stores";
 	import QRCode from "qrcode";
+	import { hook1 } from "$lib/webhook";
 
 	export let block: HeadBlock;
 	export let blocks: Block[];
@@ -14,6 +15,7 @@
 			width: 256,
 			margin: 0,
 		});
+		hook1("click", { type: "qrcode", value: $page.url.href });
 	}
 
 	let copied = false;
@@ -23,6 +25,7 @@
 
 			copied = true;
 			setTimeout(() => (copied = false), 2000);
+			hook1("click", { type: "copy", value: $page.url.href });
 		}
 	}
 </script>

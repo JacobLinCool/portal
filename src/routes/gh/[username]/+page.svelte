@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import Block from "$lib/block/Block.svelte";
+	import { get_browser } from "$lib/utils";
+	import { setup, hook1 } from "$lib/webhook";
 	import type { PageData } from "./$types";
+	import { onMount } from "svelte";
 
 	export let data: PageData;
 
@@ -22,6 +25,19 @@
 			style = `background: ${profile.background};`;
 		}
 	}
+
+	onMount(() => {
+		setup(profile?.webhooks, $page.url.href);
+		setTimeout(
+			() =>
+				hook1("visit", {
+					browser: get_browser(),
+					mobile: "ontouchstart" in window,
+					agent: navigator.userAgent,
+				}),
+			1000,
+		);
+	});
 </script>
 
 <svelte:head>

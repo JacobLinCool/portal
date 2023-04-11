@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { hook1 } from "$lib/webhook";
 	import { onMount, onDestroy } from "svelte";
 	import { fade } from "svelte/transition";
 
@@ -38,6 +39,7 @@
 				class="contents"
 				href={item.link}
 				target="_blank"
+				on:click={() => hook1("click", { type: "link", value: item.link })}
 			>
 				<div
 					class="absolute h-full w-full"

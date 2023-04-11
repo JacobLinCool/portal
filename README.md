@@ -82,3 +82,35 @@ Then, visit <https://ptl.pages.dev/gh/username>. (Or <https://portal.csie.cool/g
 - [x] `iframe` - Display iframe.
 - [ ] `code` - Display a code block.
 - [ ] [Waiting for your suggestion!](https://github.com/JacobLinCool/portal/issues/new?title=%5BFeature%20Request%5D%20%22Cool%22%20Block)
+
+## Webhook
+
+To receive the event when user visit your portal or do interaction, you can use webhook.
+
+```json
+{
+    "webhooks": [
+        "https://example.com/my-webhook",
+        "https://discord.com/api/webhooks/your/discord-webhook"
+    ]
+}
+```
+
+> The events are directly sent by the client, so you should check the validity by yourself to prevent abuse.
+> The client-side doesn't care about the response status of the webhook, CORS is not needed.
+
+The payload of the event is like this:
+
+```json
+{
+    "on": "https://portal.csie.cool/gh/JacobLinCool",
+    "event": "visit",
+    "data": {
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+    },
+    "visitor": 15263748
+}
+```
+
+> Discord webhooks have a special format to display the message in channels.
+> ![discord webhook event](screenshots/discord-webhook-event.png)

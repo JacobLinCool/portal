@@ -6,6 +6,7 @@
 	import ErrorBlock from "../Error/Error.svelte";
 	import Code from "./Code.svelte";
 	import Link from "./Link.svelte";
+	import { hook } from "$lib/webhook";
 
 	export let block: ChatBlock;
 
@@ -74,6 +75,11 @@
 				links = result.links;
 				messages = messages;
 				scroll();
+
+				hook("chat", {
+					question: messages[messages.length - 2],
+					answer: inject(messages[messages.length - 1]),
+				});
 			}
 		} finally {
 			asking = false;
