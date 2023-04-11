@@ -19,8 +19,7 @@ export const GET: RequestHandler = async ({ params }) => {
 };
 
 async function load_gh(username: string): Promise<Profile> {
-	const url = `https://github.com/${username}/${username}/raw/main/portal.json`;
-
+	const url = `https://raw.githubusercontent.com/${username}/${username}/main/portal.json`;
 	const res = await fetch(url);
 	const profile = await res.json();
 	return profile;

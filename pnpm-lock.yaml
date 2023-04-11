@@ -31,6 +31,9 @@ devDependencies:
     "@types/pangu":
         specifier: ^4.0.0
         version: 4.0.0
+    "@types/qrcode":
+        specifier: ^1.5.0
+        version: 1.5.0
     "@typescript-eslint/eslint-plugin":
         specifier: ^5.57.1
         version: 5.57.1(@typescript-eslint/parser@5.57.1)(eslint@8.38.0)(typescript@4.9.5)
@@ -76,6 +79,9 @@ devDependencies:
     prettier-plugin-tailwindcss:
         specifier: ^0.2.7
         version: 0.2.7(@trivago/prettier-plugin-sort-imports@4.1.1)(prettier-plugin-svelte@2.10.0)(prettier@2.8.7)
+    qrcode:
+        specifier: ^1.5.1
+        version: 1.5.1
     svelte:
         specifier: ^3.58.0
         version: 3.58.0
@@ -2063,6 +2069,15 @@ packages:
             }
         dev: true
 
+    /@types/qrcode@1.5.0:
+        resolution:
+            {
+                integrity: sha512-x5ilHXRxUPIMfjtM+1vf/GPTRWZ81nqscursm5gMznJeK9M0YnZ1c3bEvRLQ0zSSgedLx1J6MGL231ObQGGhaA==,
+            }
+        dependencies:
+            "@types/node": 18.14.1
+        dev: true
+
     /@types/semver@6.2.3:
         resolution:
             {
@@ -3220,6 +3235,13 @@ packages:
         engines: { node: ">=0.3.1" }
         dev: true
 
+    /dijkstrajs@1.0.2:
+        resolution:
+            {
+                integrity: sha512-QV6PMaHTCNmKSeP6QoXhVTw9snc9VD8MulTT0Bd99Pacp4SS1cjcrYPgBPmibqKVtMJJfqC6XvOXgPMEEPH/fg==,
+            }
+        dev: true
+
     /dir-glob@3.0.1:
         resolution:
             {
@@ -3288,6 +3310,13 @@ packages:
         resolution:
             {
                 integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==,
+            }
+        dev: true
+
+    /encode-utf8@1.0.3:
+        resolution:
+            {
+                integrity: sha512-ucAnuBEhUK4boH2HjVYG5Q2mQyPorvv0u/ocS+zhdw0S8AlHYY+GOFhP1Gio5z4icpP2ivFSvhtFjQi8+T9ppw==,
             }
         dev: true
 
@@ -5863,6 +5892,14 @@ packages:
         hasBin: true
         dev: true
 
+    /pngjs@5.0.0:
+        resolution:
+            {
+                integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==,
+            }
+        engines: { node: ">=10.13.0" }
+        dev: true
+
     /postcss-import@14.1.0(postcss@8.4.21):
         resolution:
             {
@@ -6093,6 +6130,20 @@ packages:
                 integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==,
             }
         engines: { node: ">=6" }
+        dev: true
+
+    /qrcode@1.5.1:
+        resolution:
+            {
+                integrity: sha512-nS8NJ1Z3md8uTjKtP+SGGhfqmTCs5flU/xR623oI0JX+Wepz9R8UrRVCTBTJm3qGw3rH6jJ6MUHjkDx15cxSSg==,
+            }
+        engines: { node: ">=10.13.0" }
+        hasBin: true
+        dependencies:
+            dijkstrajs: 1.0.2
+            encode-utf8: 1.0.3
+            pngjs: 5.0.0
+            yargs: 15.4.1
         dev: true
 
     /queue-microtask@1.2.3:

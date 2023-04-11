@@ -28,6 +28,7 @@ declare global {
 		avatar: string;
 		display: string;
 		description?: string;
+		share?: boolean;
 	}
 
 	export interface ActionBlock extends BaseBlock {

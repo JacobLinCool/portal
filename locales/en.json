@@ -1,4 +1,9 @@
 {
+	"block": {
+		"head": {
+			"qrcode": "Share this page"
+		}
+	},
 	"chat": {
 		"greeting": "Ask me something?",
 		"placeholder": "How to contact you?"

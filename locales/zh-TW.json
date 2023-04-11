@@ -1,4 +1,9 @@
 {
+	"block": {
+		"head": {
+			"qrcode": "分享此頁面"
+		}
+	},
 	"chat": {
 		"greeting": "想問我什麼呢？",
 		"placeholder": "如何聯絡你呢？"

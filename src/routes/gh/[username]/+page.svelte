@@ -33,11 +33,11 @@
 </svelte:head>
 
 {#if data.ok}
-	<div class="flex h-full w-full flex-col items-center bg-base-100 px-2" {style}>
-		<div class="h-full w-full max-w-lg overflow-auto">
+	<div class="flex h-full w-full flex-col items-center overflow-auto bg-base-100 px-2" {style}>
+		<div class="h-full w-full max-w-lg">
 			<div class="w-full pt-12" />
 			{#each profile.blocks as block}
-				<Block {block} on:done={() => done++} />
+				<Block {block} blocks={profile.blocks} on:done={() => done++} />
 
 				{#if done === profile.blocks.length}
 					<div class="divider" />
