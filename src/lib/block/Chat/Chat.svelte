@@ -50,7 +50,7 @@
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ messages, question }),
+				body: JSON.stringify({ messages: messages.slice(1), question }),
 			});
 			messages.push(
 				question

@@ -5,11 +5,13 @@ export const GET: RequestHandler = async ({ params }) => {
 	try {
 		let profile: Profile;
 
+		const s = Date.now();
 		if (params.src === "gh") {
 			profile = await load_gh(params.id);
 		} else {
 			throw new Error("Unknown Source: " + params.src);
 		}
+		console.log(`profile ${params.src}/${params.id}: ${Date.now() - s}ms`);
 
 		return json({ ok: true, profile });
 	} catch (err) {

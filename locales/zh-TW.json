@@ -6,7 +6,7 @@
 	},
 	"chat": {
 		"greeting": "想問我什麼呢？",
-		"placeholder": "如何聯絡你呢？"
+		"placeholder": "如何聯絡？"
 	},
 	"welcome": "歡迎使用 Portal",
 	"with-tech": "SvelteKit 加上 TailwindCSS、DaisyUI 以及 I18n！"

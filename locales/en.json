@@ -6,7 +6,7 @@
 	},
 	"chat": {
 		"greeting": "Ask me something?",
-		"placeholder": "How to contact you?"
+		"placeholder": "How to contact?"
 	},
 	"welcome": "Welcome to Portal",
 	"with-tech": "SvelteKit with TailwindCSS, DaisyUI, and I18n!"
